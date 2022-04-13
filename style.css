@@ -27,12 +27,17 @@ body{
     flex-direction: column;
 }
 
-.header, .main, .footer{
+.container{
+    margin: 0 auto;
+    max-width: 1515px;
+}
+
+.header, .footer{
     background-color: #71BA2D;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.header{
+.header .container{
     font-size: 20px;
     padding: 7px;
 }
@@ -68,12 +73,13 @@ a:hover, .menu li a.active{
     color: #E6F308;
 }
 
-.main{
+.main .container{
     background-color: white;
     padding: 50px 15px;
     display: grid;
     grid-template-columns: 1fr 3fr;
-    gap: 40px;
+    column-gap: 40px;
+    row-gap: 0px;
 }
 
 .side-bar{
@@ -82,11 +88,6 @@ a:hover, .menu li a.active{
     color: white;
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
-}
-
-.side-bar-containt{
-    background-color:#01B22E;
     font-size: x-large;
 }
 
@@ -100,7 +101,8 @@ a:hover, .menu li a.active{
     margin-bottom: 20px;
 }
 .side-bar-containt-top, .side-bar-containt-categories{
-    margin: 20px 20px;
+    background-color:#01B22E;
+    padding: 20px 20px;
 }
 
 .popular-brands, .search{
@@ -124,6 +126,7 @@ a:hover, .menu li a.active{
 }
 
 .side-bar-ad{
+    margin-top: 50px;
     background-color: #346702;
     padding: 20px 15px;
     text-align: center;
@@ -211,20 +214,25 @@ a:hover, .menu li a.active{
     font-size: large;
 }
 
-.footer{
+.footer .container{
     font-size: large;
-}
-
-.bottom-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.copyright-message{
+    flex: 1;
+}
+
+.bottom-menu{
+    column-gap: 0px;
+    margin: 25px 0px;
+}
+
 .bottom-menu li{
-    padding-right: 20px;
+    padding:0px 20px;
     border-right: 2px solid #000;
-    display: inline-block;
 }
 .bottom-menu li:last-child{
     border-right: 0;
@@ -234,7 +242,7 @@ a:hover, .menu li a.active{
     .nav-toggle-lable{
         display: block;
     }
-    .bottom-container{
+    .footer .container{
         align-items: center;
         display: flex;
         flex-direction: column-reverse;
@@ -259,12 +267,12 @@ a:hover, .menu li a.active{
         display: none;
     }
     .nav-toggle:checked ~ .menu{
-        display: block;
-        top: 80px;
-        left: 0px;
-        background-color: #71BA2D;
-        height: 100%;
-        width: 100%;
+        display:block;
+        position:fixed;
+        top: 25px;
+        left: -10px;
+        width:100%;
+        background-color:#71BA2D;
         text-align: center;
     }
     .menu li{
@@ -274,7 +282,7 @@ a:hover, .menu li a.active{
         font-size: 20px;
     }
 
-    .main{
+    .main .container{
         display: flex;
         flex-direction: column;
     }
@@ -302,7 +310,7 @@ a:hover, .menu li a.active{
 
 @media (max-width: 1200px) and (min-width: 770px){
 
-    .main{
+    .main .container{
         grid-template-columns: 1fr 2fr;
     }
 
@@ -316,8 +324,11 @@ a:hover, .menu li a.active{
     .main-tab{
         display: flex;
         flex-direction: column;
+        row-gap: 20px;
     }
-    .footer{
-        font-size: small;
+    .bottom-menu li{
+        padding: 0px 15px;
     }
+
+
 }
