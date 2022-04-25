@@ -221,7 +221,7 @@ a:hover, .menu li a.active {
 }
 
 .footer .container {
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
