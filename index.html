@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "2be137e3-6083-4a7e-aaa7-68e75f041e17",
+            apiHost: "https://flowise-kngv.onrender.com",
+            theme: {
+                button: {
+                    backgroundColor: '#01B22E',
+                },
+                chatWindow: {
+                    userMessage: {
+                        backgroundColor: '#01B22E',
+                    },
+                    textInput: {
+                        sendButtonColor: '#01B22E',
+                    },
+                },
+
+            }
+        })
+    </script>
     <header class="header">
     <section class="container">
         <nav class="nav">
